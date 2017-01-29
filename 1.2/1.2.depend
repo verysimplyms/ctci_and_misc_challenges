@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1484975382 source:c:\users\saiyanlogo\desktop\school\codinginterview\1.2\main.cpp
+	<stdio.h>
+	<iostream>
+	<string.h>
+

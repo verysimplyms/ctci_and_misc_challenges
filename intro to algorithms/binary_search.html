@@ -1,0 +1,48 @@
+<script>
+	
+	var primes = {
+	2:{id: 2, user: 'user2', pass: 'ex'},
+	3:{id: 3, user: 'user3', pass: 'ex'},
+	5:{id: 5, user: 'user5', pass: 'ex'},
+	7:{id: 7, user: 'user7', pass: 'ex'},
+	11:{id: 11, user: 'user11', pass: 'ex'},
+	13:{id: 13, user: 'user13', pass: 'ex'},
+	17:{id: 17, user: 'user17', pass: 'ex'},
+	19:{id: 19, user: 'user19', pass: 'ex'}
+	};
+
+	var findValue = 3;
+	
+	console.log(Object.keys(primes).length);
+	
+	var binarySearch = function(array, key) {
+		var startIndex = 0,
+		stopIndex = Object.keys(array).length-1,
+		middleIndex;
+		
+		while(startIndex <= stopIndex) {
+			// Double tilda is bitwise that mimics Math.floor()
+			// (but different from Math.floor in certain circumstances)
+			middleIndex = ~~((startIndex + stopIndex) / 2);
+			
+			if(key == array[middleIndex].id) {
+				break;
+			} else if(key < array[middleIndex].id) {
+				stopIndex = middleIndex - 1;
+			} else if(key > array[middleIndex].id){
+				startIndex = middleIndex + 1;
+			}
+			
+		}
+		
+		if(array[middleIndex].id == key) {
+			return [middleIndex, array[middleIndex]];
+		} else {
+			return -1;
+		}
+		
+	}
+	
+	console.log("Searching for value: " + findValue);
+	console.log(binarySearch(primes, findValue));
+</script>

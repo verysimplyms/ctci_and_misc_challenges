@@ -1,0 +1,42 @@
+<script>
+	var testArray = [5,9,3,6,8,1,4,2,7,0]
+	
+	console.log("Before loop: ")
+	console.log(testArray)
+
+	var bubbleSort = function(test) {
+		for (var i = 0; i < test.length; i++) {
+			for (var j = (i+1); j < test.length; j++) {
+				if(test[i] > test[j]) {
+					temp = test[i];
+					test[i] = test[j];
+					test[j] = temp;
+				}
+			}
+		}
+		
+		return test;
+	}
+	
+	var insertionSort = function(givenArray) {
+		for (var i = 1; i <= (givenArray.length - 1); i++) {
+			var j = i;
+			while(j > 0 && givenArray[j-1] > givenArray[j]) { // [5,9,3] //Continues iterating until either j-1 is no longer larger than j, or until at the beginning of the array
+				temp = givenArray[j];
+				givenArray[j] = givenArray[j-1];
+				givenArray[j-1] = temp;
+				j--;
+			}
+		}
+		
+		return givenArray;
+	}
+
+	console.log("After bubble: ")
+	console.log(bubbleSort(testArray))
+	
+	console.log("After insertion: ")
+	console.log(insertionSort(testArray))
+	
+	console.log("Both algorithms are O(n^2)")
+</script>
