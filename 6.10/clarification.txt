@@ -1,2 +1,0 @@
-The total amount of days is based on the interpretation of the question that testing would be done 7 days after submitting it.
-So if I submitted it on day 1, I wouldn't get the results until day 8, because they wouldn't begin processing it until day 2.
